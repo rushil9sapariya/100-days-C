@@ -1,0 +1,19 @@
+/*Q31: Write a program to take a number as input and print its equivalent binary representation.*/
+
+#include <stdio.h>
+
+int main() {
+    int n, temp, remainder, binary = 0, place = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    temp = n;  
+
+    while (temp > 0) {
+        remainder = temp % 2;      
+        binary = binary + remainder * place; 
+        place = place * 10;         
+        temp = temp / 2;            
+    }
+    printf("Binary representation of %d is: %d\n", n, binary);
+    return 0;
+}
